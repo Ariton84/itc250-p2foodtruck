@@ -80,7 +80,12 @@ function showForm()
             //echo '<p>Taco <input type="text" name="item_1" /></p>';
               
               echo '<p>' . $item->Name . ' <input type="text" name="item_' . $item->ID . '" /></p>';
-              echo '<p>' . implode("<br>",$item->Extras) . ' <input type="checkbox" name="extra_" /></p>';
+             
+            //Loops through the Extras
+            foreach($item->Extras as $extra)
+              {
+                  echo '<p>' . $extra . '<input type="checkbox" name="extra_' . $extra . '" /></p>';
+              }
               
           }
         
